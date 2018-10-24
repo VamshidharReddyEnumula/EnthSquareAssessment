@@ -1,0 +1,95 @@
+body
+        {
+            margin:0;
+        }
+        .container
+        {
+            background-color:Blue;            
+            padding:10px;
+            color:White;
+        }
+        .header-text
+        {
+            margin-top:40px;
+            text-align:center;
+        }
+        .fontsize-35
+        {
+            font-size: 35px;
+        }
+        .green-text
+        {
+            color:mediumseagreen;
+            font-size:12px;
+        }
+        .body-container
+        {
+            width:10%;
+            margin:auto;
+        }
+        .body-center
+        {
+            width:345px;
+            display:inline-block;
+        }
+		
+		.image-responsive{
+			background-size:100%;
+		}
+        .body-center
+        {
+            background-color:Black;         
+            margin:-435px 0 0 -124px;  
+            position:absolute;
+            padding: 20px 2px 40px 0;
+        }
+        .right-img
+        {
+            margin-left:287px;
+        }
+        .left-img
+        {
+            margin-left:76px;
+        }
+        .btn
+        {
+            background-color:mediumseagreen;
+            border:none;
+            padding:10px 50px;
+            margin-top:60px;
+            border-radius:2px;
+            color:White;
+        }
+        .textCenter
+        {
+             text-align:center;
+        }
+        .inlineBlock
+        {
+            display:inline-block;
+        }
+        .textCenter ul
+        {
+            margin-top:45px;
+        }
+        .textCenter li
+        {
+            list-style:none;
+            text-align:left;
+            margin: 0 0 5px 22%;
+        }
+        .footer
+        {
+            background-color: dodgerblue;
+            height: 150px;
+            margin-top:-15px;            
+        }
+        .star-below
+        {
+            margin: -20px 0 0 85px;
+            display: inline-block;
+        }
+        .doller2
+        {
+            margin: 0 10px 0 0;
+        }

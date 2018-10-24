@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assessment_2</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <!-- <script src="assessment2.js"></script> -->
+        <script>
+        var a = [
+    {
+      "product_category": "kitchen",
+      "product_name": "4-Piece Set Bamboo Table Matt"
+    },
+    {
+      "product_category": "kitchen",
+      "product_name": "Expresso Coffee Maker"
+    },
+    {
+      "product_category": "shoes",
+      "product_name": "Puma Trainers x3"
+    },
+    {
+      "product_category": "home",
+      "product_name": "4x6 Photo Frame"
+    },
+    {
+      "product_category": "shoes",
+      "product_name": "Skechers ProWalkers"
+    },
+    {
+      "product_category": "home",
+      "product_name": "Shower Curtain"
+    },
+    {
+      "product_category": "home",
+      "product_name": "Accent Table Lamp"
+    },
+    {
+      "product_category": "electronics",
+      "product_name": "Cannon x930 DSLR Camera"
+    },
+    {
+      "product_category": "kitchen",
+      "product_name": "12 Qt Pressure Cooker"
+    },
+    {
+      "product_category": "electronics",
+      "product_name": "Apple Iphone 8"
+    },
+    {
+      "product_category": "kitchen",
+      "product_name": "Wooden Hexagonal Coasters"
+    },
+    {
+      "product_category": "electronics",
+      "product_name": "Bose QC 300 Headphones"
+    },
+    {
+      "product_category": "shoes",
+      "product_name": "Reebok Classic 1990"
+    },
+    {
+      "product_category": "kitchen",
+      "product_name": "12-Piece Knife Set"
+    },
+    {
+      "product_category": "shoes",
+      "product_name": "Nike Air Max Elite"
+    },
+    {
+      "product_category": "home",
+      "product_name": "100% Cotton Towels"
+    },
+    {
+      "product_category": "electronics",
+      "product_name": "Sony Super Bass Earbuds"
+    },
+    {
+      "product_category": "shoes",
+      "product_name": "Addidas Foamfits"
+    }
+  ];
+
+
+// for(let item of a){
+//     console.log(item);
+//     }
+function getNewJSONData() {
+    var jsonData = {};
+    a.forEach(function(object) 
+    {
+        if(jsonData.hasOwnProperty(object.product_category)){
+            jsonData[object.product_category].push(object);
+        } else {
+            jsonData[object.product_category] = new Array();
+            jsonData[object.product_category].push(object);
+        }        
+    });
+    console.log(jsonData);
+    return jsonData;
+}</script>
+    </head>
+    <body>
+        <h1>Categories</h1>
+        <div id="Categories"></div>
+        <h1>Products</h1>
+        <div id="Products"></div>
+        <script>
+        var data = getNewJSONData();
+        //console.log(data);
+        for(let obj in data) {
+            //console.log(obj);
+            (function () {
+            var btn = document.createElement("button");
+            var node = document.createTextNode(obj.toString());
+            btn.setAttribute("class", "btn");
+            var elem = document.getElementById("Categories");
+            btn.appendChild(node);
+            btn.addEventListener("click", function(){getProducts(obj.toString());}, false);
+            elem.appendChild(btn);
+          }());
+        }
+
+        //document.getElementsByClassName("btn").addEventListener("click", getProducts(this.toString()));
+
+        function getProducts(Category) {
+            let products1 = data[Category];
+            console.log(products1); 
+            let prod = document.getElementById("Products");
+                while (prod.firstChild) {
+                  prod.removeChild(prod.firstChild);
+                }
+            for(let i=0; i < products1.length; i++) {
+                // element of products
+                console.log(products1[i]["product_name"]);   
+                
+                //prod.childNodes.removeChild(prod);
+            let btn = document.createElement("button");
+            let node = document.createTextNode(products1[i]["product_name"]);
+            btn.setAttribute("class", "btn");
+            btn.appendChild(node);
+            //btn.addEventListener("click", getProducts(products1[i]["product_name"]));
+            prod.appendChild(btn);
+            }            
+        }
+        </script>
+        
+    </body>
+</html>
